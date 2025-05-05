@@ -1,8 +1,11 @@
 # GraphAI + GUI + Vue3
 
 ## init
-```
-ln -s src/config/game-dev.ts src/config/project.ts
+
+```sh
+# make sure the symlink is correct
+cd src/config
+ln -s ../config/game-dev.ts project.ts
 yarn install
 ```
 
