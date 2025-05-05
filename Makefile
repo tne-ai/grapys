@@ -14,6 +14,8 @@ help: $(MAKEFILE_LIST)
 install:
 	@echo set VITE_OPEN_API_KEY, VITE_ANTHROPIC_API_KEY GOOGLE_GENAI_API_KEY VITE_BRWOSERLESS_API_TOKEN 
 	cd packages/grapys-vue && yarn install
+	if [[ ! -e packages/grapys-vue/src/config/project.ts ]]; then \
+			cd packages/grapys-vue/src/config && ln -s ../config/game-dev.ts project.ts; fi
 	cd packages/grapys-react && yarn install
 
 ## run: run the vue client
